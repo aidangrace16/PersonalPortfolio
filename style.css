@@ -1,42 +1,135 @@
 /* Add you CSS here */
 
-/* Set a nice background color and font for the whole page */
+/* Set a creative gradient background and font for the whole page */
 body {
-  background-color: #f9f9f9; /* light gray background */
-  font-family: Arial, sans-serif; /* clean, easy-to-read font */
-  color: #222; /* dark text for good contrast */
-  margin: 0; /* remove default margin */
-  padding: 0; /* remove default padding */
+  background-color: #f4f6fb;
+  font-family: "Arial", "sans-serif";
+  color: #222;
+  margin: 0;
+  padding: 0;
+  background-image:
+    linear-gradient(120deg, #ffecd2 0%, #fcb69f 100%), /* soft peach gradient */
+    url('img/hero-bg.jpg'); /* your background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* Style for all sections to add spacing */
+/* Make all sections span the full width and add a glassmorphism effect */
 section {
-  max-width: 600px; /* limit width for better readability */
-  margin: 30px auto; /* center sections and add vertical space */
-  padding: 20px; /* add space inside sections */
-  background-color: #fff; /* white background for sections */
-  border-radius: 8px; /* rounded corners */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* subtle shadow */
+  width: 100%;
+  max-width: none;
+  margin: 30px 0;
+  padding: 24px 0;
+  background: linear-gradient(120deg, rgba(255, 183, 197, 0.45), rgba(144, 224, 239, 0.45));
+  border-radius: 18px; /* more modern, rounded corners */
+  box-shadow: 0 8px 32px rgba(60, 72, 88, 0.10); /* deeper shadow */
+  backdrop-filter: blur(6px); /* glass effect */
+  -webkit-backdrop-filter: blur(6px); /* for Safari */
+  border: 1px solid rgba(255,255,255,0.25); /* subtle border for glass look */
+  transition: box-shadow 0.2s;
 }
 
-/* Style for the hero section */
+/* Add a hover effect for modern feel */
+section:hover {
+  box-shadow: 0 12px 40px rgba(60, 72, 88, 0.18);
+}
+
+/* Center the content inside each section */
+section > * {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Style for the hero section with a creative gradient overlay */
 .hero {
-  text-align: center; /* center the text */
-  background-color: #e3f2fd; /* light blue background */
+  text-align: center;
+  background: linear-gradient(120deg, rgba(255, 183, 197, 0.45), rgba(144, 224, 239, 0.45));
+  /* pink to blue gradient, semi-transparent */
 }
 
-/* Make section titles stand out */
+/* Make section titles stand out with creative colors */
 h1, h2 {
-  color: #1976d2; /* blue color for headings */
+  color: #ff6f61; /* coral accent for headings */
+  letter-spacing: 1px;
 }
 
 /* Style the skills list */
 .skills ul {
-  list-style-type: disc; /* bullet points */
-  padding-left: 20px; /* space before bullets */
+  list-style-type: disc;
+  padding-left: 20px;
 }
 
 /* Add a little space between list items */
 .skills li {
   margin-bottom: 8px;
+}
+
+/* Profile icon styles with a playful border */
+.profile-icon {
+  width: 110px;
+  height: 110px;
+  background: linear-gradient(135deg, #90e0ef 60%, #fcb69f 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 22px auto;
+  font-size: 48px;
+  box-shadow: 0 4px 16px rgba(60, 72, 88, 0.13);
+  overflow: hidden;
+  padding: 0;
+  aspect-ratio: 1 / 1;
+  border: 3px solid #ffb7c5; /* playful pink border */
+}
+
+/* Make sure the profile image fills the circle and is centered */
+.profile-icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Style for the projects section */
+.projects {
+  text-align: center;
+}
+
+/* Style for the coming soon message */
+.coming-soon {
+  color: #6c63ff; /* creative purple accent */
+  font-style: italic;
+  font-size: 1.1em;
+  margin-top: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* Simple footer styles for contact info */
+footer.simple-footer {
+  width: 100%;
+  text-align: center; /* center the text */
+  padding: 18px 0 16px 0; /* space above and below */
+  background: none; /* no background, keep it simple */
+  color: #000000; /* creative purple accent */
+  font-family: "sans-serif";
+  font-size: 1.08em;
+  position: relative; /* stays at the bottom of content */
+  border: none;
+  margin-top: 40px; /* space above footer */
+  letter-spacing: 0.5px;
+}
+
+footer.simple-footer a {
+  color: #ff6f61; /* coral accent for the email link */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer.simple-footer a:hover {
+  text-decoration: underline;
 }
