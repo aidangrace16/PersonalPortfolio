@@ -9,7 +9,7 @@ body {
   padding: 0;
   background-image:
     linear-gradient(120deg, #ffecd2 0%, #fcb69f 100%), /* soft peach gradient */
-    url('img/hero-bg.jpg'); /* your background image */
+    url('img/hero-bg.jpg'); /* background image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
