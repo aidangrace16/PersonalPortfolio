@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>My Personal Site</title>
   <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
   <!-- Navigation Bar: Helps users move around your site -->
@@ -47,14 +49,33 @@
   <!-- Skills Section: List your current or future skills here -->
   <section class="skills" id="skills">
     <h2>My Skills</h2>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>Python</li>
-      <li>Java 😳</li>
-      <li>C#</li>
-    </ul>
+    <!-- Skills are shown as icons in a row, with text underneath -->
+    <div class="skills-row">
+      <div class="skill-icon">
+        <i class="fa-brands fa-html5" aria-hidden="true"></i>
+        <div>HTML</div>
+      </div>
+      <div class="skill-icon">
+        <i class="fa-brands fa-css3-alt" aria-hidden="true"></i>
+        <div>CSS</div>
+      </div>
+      <div class="skill-icon">
+        <i class="fa-brands fa-js" aria-hidden="true"></i>
+        <div>JavaScript</div>
+      </div>
+      <div class="skill-icon">
+        <i class="fa-brands fa-python" aria-hidden="true"></i>
+        <div>Python</div>
+      </div>
+      <div class="skill-icon">
+        <i class="fa-brands fa-java" aria-hidden="true"></i>
+        <div>Java 😳</div>
+      </div>
+      <div class="skill-icon">
+        <i class="fa-solid fa-code" aria-hidden="true"></i>
+        <div>C#</div>
+      </div>
+    </div>
   </section>
 
   <hr class="divider">
