@@ -114,7 +114,7 @@ footer.simple-footer {
   width: 100%;
   text-align: center; /* center the text */
   padding: 18px 0 16px 0; /* space above and below */
-  background: none; /* no background, keep it simple */
+  background: rgba(255, 255, 255, 0.85); /* subtle white background */
   color: #000000; /* creative purple accent */
   font-family: "sans-serif";
   font-size: 1.08em;
@@ -122,6 +122,7 @@ footer.simple-footer {
   border: none;
   margin-top: 40px; /* space above footer */
   letter-spacing: 0.5px;
+  border-top: 1.5px solid #e0e0e0;
 }
 
 footer.simple-footer a {
@@ -133,3 +134,83 @@ footer.simple-footer a {
 footer.simple-footer a:hover {
   text-decoration: underline;
 }
+
+/* Navigation bar styles for a professional look */
+.navbar {
+  width: 100%;
+  margin: 0px auto 18px auto; /* space above and below, centered */
+  background: linear-gradient(90deg, #ffecd2 60%, #90e0ef 100%); /* soft gradient */
+  box-shadow: 0 4px 18px rgba(60, 72, 88, 0.10); /* soft shadow */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 0; /* remove default padding */
+  font-family: 'Trebuchet MS', 'Arial', sans-serif; /* playful, modern font */
+}
+
+/* Style the navbar list to be horizontal and centered */
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px; /* consistent height */
+}
+
+/* Add space between navbar items */
+.navbar li {
+  margin: 0 22px;
+}
+
+/* Style the navbar links */
+.navbar a {
+  text-decoration: none;
+  color: #ff6f61; /* coral accent */
+  font-weight: bold;
+  font-size: 1.13em;
+  letter-spacing: 1px;
+  padding: 8px 0;
+  transition: color 0.2s, background 0.2s, border-radius 0.2s;
+  border-radius: 8px;
+  font-family: inherit; /* use navbar font */
+}
+
+/* Add a hover effect for navbar links */
+.navbar a:hover {
+  color: #fff;
+  background: #ff6f61; /* coral background on hover */
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+/* Divider line between sections */
+.divider {
+  border: none;
+  border-top: 1.5px solid #e0e0e0;
+  margin: 0 auto 18px auto;
+  width: 90%;
+  opacity: 0.7;
+}
+
+/* Resume button styles (Commented out for now) */
+/* .resume-btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 10px 26px;
+  background: linear-gradient(90deg, #ffb7c5 60%, #90e0ef 100%);
+  color: #222;
+  border: none;
+  border-radius: 22px;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(60, 72, 88, 0.10);
+  transition: background 0.2s, color 0.2s;
+}
+
+.resume-btn:hover {
+  background: linear-gradient(90deg, #90e0ef 60%, #ffb7c5 100%);
+  color: #ff6f61;
+} */
