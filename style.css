@@ -272,6 +272,105 @@ footer.simple-footer a:hover {
   color: #ff6f61;
 } */
 
+/* Style for the project card */
+.project-card {
+  /* Add a border and rounded corners */
+  border: 2px solid #4ef0fc;
+  border-radius: 14px;
+  background: rgba(30, 20, 60, 0.92);
+  box-shadow: 0 4px 16px #4ef0fc22;
+  padding: 0; /* Remove padding so image can touch edges */
+  margin: 18px auto;
+  max-width: 340px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  text-align: center;
+  cursor: pointer; /* Show pointer on hover */
+  overflow: hidden; /* Make sure image corners are rounded */
+}
+
+/* Make the card stand out a bit more when hovered */
+.project-card:hover {
+  box-shadow: 0 8px 32px #4ef0fc44;
+  border-color: #00e0ff;
+}
+
+/* Make the whole card clickable, but remove link styles */
+.project-card a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Style for the project image - fills the card width */
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0; /* Remove border radius so it matches card edges */
+  margin: 0; /* Remove margin so image touches edges */
+  box-shadow: none; /* Remove shadow for a flush look */
+}
+
+/* Style for the project title */
+.project-card h3 {
+  color: #ff0000;
+  margin: 10px 0 8px 0;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  text-shadow: 0 0 6px #4ef0fc44;
+}
+
+/* Style for the project description */
+.project-card p {
+  color: #ffb3b3;
+  font-size: 1em;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Style for the horror game project description */
+.project-description {
+  /* Add padding just for the text section */
+  padding: 18px 18px 14px 18px;
+  /* Use a cooler, more emotional font */
+  font-family: 'Segoe UI', 'Trebuchet MS', 'Arial', cursive, sans-serif;
+  font-size: 1.08em;
+  color: #ffeaea;
+  background: rgba(40, 10, 30, 0.18);
+  border-radius: 0 0 12px 12px;
+  margin: 0;
+  line-height: 1.7;
+  letter-spacing: 0.2px;
+  /* Add a subtle shadow for effect */
+  text-shadow: 0 1px 8px #ff3b3b22;
+}
+
+/* Extra emotional style for the horror game project card */
+.project-card-emotional {
+  /* Add a subtle red glow for a horror vibe */
+  box-shadow: 0 4px 24px #ff3b3b33, 0 4px 16px #4ef0fc22;
+  border: 2.5px solid #ff3b3b;
+  background: linear-gradient(120deg, #2d1457 60%, #3b1a2a 100%);
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+/* On hover, make the card shake a little and glow more */
+.project-card-emotional:hover {
+  box-shadow: 0 8px 40px #ff3b3b66, 0 8px 32px #4ef0fc44;
+  border-color: #ff3b3b;
+  /* Simple shake animation */
+  animation: shake 0.18s linear 1;
+}
+
+/* Shake keyframes for a quick effect */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
 /* Responsive styles for small screens */
 @media (max-width: 600px) {
   /* Make sure the body allows scrolling and fits small screens */
