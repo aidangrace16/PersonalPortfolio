@@ -1,0 +1,16 @@
+{
+  "name": "Aidan Grace Portfolio",
+  "short_name": "Portfolio",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#2d1457",
+  "theme_color": "#2d1457",
+  "description": "Aidan Grace's personal portfolio site.",
+  "icons": [
+    {
+      "src": "img/hot1.JPG",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    }
+  ]
+}

@@ -827,6 +827,19 @@ footer.simple-footer a:hover {
     background: #4ef0fc44;
     border-radius: 3px;
   }
+
+  /* Turn off project card animations on mobile screens */
+  .project-card-emotional:hover,
+  .project-card-water:hover,
+  .project-card-beauty:hover,
+  .project-card-tech:hover,
+  .project-card-space:hover {
+    /* Remove animation and transform effects for mobile */
+    animation: none !important;
+    transform: none !important;
+    box-shadow: 0 4px 24px #4ef0fc22;
+    border-color: inherit;
+  }
 }
 
 /* Make project titles and descriptions white for all projects except the horror game */
