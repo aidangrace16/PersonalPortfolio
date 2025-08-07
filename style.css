@@ -33,7 +33,8 @@ section {
 
 /* When jumping to a section, leave space for the navbar at the top */
 section {
-  scroll-margin-top: 30px; /* Adjust this value to match your navbar height */
+  scroll-margin-top: 30px;
+  /* Adjust this value to match your navbar height */
 }
 
 /* Add a hover effect for modern feel */
@@ -42,7 +43,7 @@ section:hover {
 }
 
 /* Center the content inside each section */
-section > * {
+section>* {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -57,38 +58,49 @@ section > * {
 }
 
 /* Headings: neon blue/cyan for a techy look */
-h1, h2 {
-  color: #4ef0fc; /* neon cyan */
+h1,
+h2 {
+  color: #4ef0fc;
+  /* neon cyan */
   letter-spacing: 1.5px;
   text-shadow: 0 0 8px #4ef0fc44;
 }
 
 /* Remove old skills list styles since we're not using ul/li anymore */
-.skills ul, .skills li, .skills li i {
+.skills ul,
+.skills li,
+.skills li i {
   all: unset;
 }
 
 /* Skills row: display icons in a horizontal row */
 .skills-row {
-  display: flex; /* put items in a row */
-  justify-content: center; /* center the row */
-  gap: 36px; /* space between each skill */
+  display: flex;
+  /* put items in a row */
+  justify-content: center;
+  /* center the row */
+  gap: 36px;
+  /* space between each skill */
   margin-top: 18px;
   margin-bottom: 10px;
-  flex-wrap: wrap; /* wrap on small screens */
+  flex-wrap: wrap;
+  /* wrap on small screens */
 }
 
 /* Each skill icon and label stacked vertically */
 .skill-icon {
   display: flex;
-  flex-direction: column; /* stack icon and text */
-  align-items: center; /* center horizontally */
+  flex-direction: column;
+  /* stack icon and text */
+  align-items: center;
+  /* center horizontally */
 }
 
 /* Make the icons larger and keep their color */
 .skill-icon i {
   font-size: 2.7em;
-  color: #4ef0fc; /* neon blue */
+  color: #4ef0fc;
+  /* neon blue */
   margin-bottom: 10px;
   transition: transform 0.15s, color 0.2s;
   text-shadow: 0 0 8px #4ef0fc55;
@@ -122,10 +134,14 @@ h1, h2 {
 
 /* Add some space after each skill icon */
 .skills li i {
-  margin-right: 8px; /* space between icon and skill name */
-  color: #ff6f61;    /* match accent color */
-  font-size: 1.2em;  /* make icons a bit larger */
-  vertical-align: middle; /* align icon with text */
+  margin-right: 8px;
+  /* space between icon and skill name */
+  color: #ff6f61;
+  /* match accent color */
+  font-size: 1.2em;
+  /* make icons a bit larger */
+  vertical-align: middle;
+  /* align icon with text */
 }
 
 /* Profile icon styles with a playful border */
@@ -172,7 +188,8 @@ h1, h2 {
 
 /* Add more space above the 'More projects coming soon' message */
 .more-projects-soon {
-  margin-top: 64px; /* Adds extra space above the message */
+  margin-top: 64px;
+  /* Adds extra space above the message */
 }
 
 /* Simple footer styles for contact info */
@@ -223,7 +240,8 @@ footer.simple-footer a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px; /* consistent height */
+  height: 40px;
+  /* consistent height */
 }
 
 /* Add space between navbar items */
@@ -287,15 +305,18 @@ footer.simple-footer a:hover {
   /* Add a border and rounded corners */
   border: 2px solid #4ef0fc;
   border-radius: 14px;
-  background: rgba(30, 20, 60, 0.92);
+  background: rgba(60, 59, 20, 0.92);
   box-shadow: 0 4px 16px #4ef0fc22;
-  padding: 0; /* Remove padding so image can touch edges */
+  padding: 0;
+  /* Remove padding so image can touch edges */
   margin: 18px auto;
   max-width: 340px;
   transition: box-shadow 0.2s, border-color 0.2s;
   text-align: center;
-  cursor: pointer; /* Show pointer on hover */
-  overflow: hidden; /* Make sure image corners are rounded */
+  cursor: pointer;
+  /* Show pointer on hover */
+  overflow: hidden;
+  /* Make sure image corners are rounded */
 }
 
 /* Make the card stand out a bit more when hovered */
@@ -313,12 +334,17 @@ footer.simple-footer a:hover {
 
 /* Style for the project image - fills the card width */
 .project-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 0; /* Remove border radius so it matches card edges */
-  margin: 0; /* Remove margin so image touches edges */
-  box-shadow: none; /* Remove shadow for a flush look */
+  max-width: 340px;   /* Maximum width for images */
+  max-height: 250px;  /* Maximum height for images */
+  width: 100%;        /* Image fills the card width, but not more than max-width */
+  height: 250px;      /* Set a fixed height for all images */
+  object-fit: cover;  /* Crop if needed to fit the box */
+  border-radius: 0;
+  /* Remove border radius so it matches card edges */
+  margin: 0;
+  /* Remove margin so image touches edges */
+  box-shadow: none;
+  /* Remove shadow for a flush look */
 }
 
 /* Style for the project title */
@@ -346,7 +372,7 @@ footer.simple-footer a:hover {
   font-family: 'Segoe UI', 'Trebuchet MS', 'Arial', cursive, sans-serif;
   font-size: 1.08em;
   color: #ffeaea;
-  background: rgba(40, 10, 30, 0.18);
+  background: transparent; /* Match the card background */
   border-radius: 0 0 12px 12px;
   margin: 0;
   line-height: 1.7;
@@ -374,15 +400,129 @@ footer.simple-footer a:hover {
 
 /* Shake keyframes for a quick effect */
 @keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-4px); }
-  50% { transform: translateX(4px); }
-  75% { transform: translateX(-2px); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-4px);
+  }
+
+  50% {
+    transform: translateX(4px);
+  }
+
+  75% {
+    transform: translateX(-2px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Space-themed project card for NASA gallery */
+.project-card-space {
+  /* Dark blue/purple space theme with starry glow */
+  box-shadow: 0 4px 24px #4169e1aa, 0 4px 16px #4ef0fc22;
+  border: 2.5px solid #4169e1;
+  background: linear-gradient(120deg, #0f0f23 60%, #1a1a3a 100%);
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+/* Space card hover effect with cosmic glow */
+.project-card-space:hover {
+  box-shadow: 0 8px 40px #4169e1cc, 0 8px 32px #00bfff88;
+  border-color: #00bfff;
+  transform: translateY(-3px);
+}
+
+/* Water-themed project card for Hydro Hero */
+.project-card-water {
+  /* Blue/teal water theme with ocean glow */
+  box-shadow: 0 4px 24px #20b2aaaa, 0 4px 16px #4ef0fc22;
+  border: 2.5px solid #20b2aa;
+  background: linear-gradient(120deg, #0d1b2a 60%, #1b3a4b 100%);
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+/* Water card hover effect with wave-like motion */
+.project-card-water:hover {
+  box-shadow: 0 8px 40px #20b2aacc, 0 8px 32px #00ced1aa;
+  border-color: #00ced1;
+  /* Gentle wave animation */
+  animation: wave 0.6s ease-in-out 1;
+}
+
+/* Wave animation for water theme */
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-2px); }
+  50% { transform: translateY(0); }
+  75% { transform: translateY(-1px); }
+}
+
+/* Beauty-themed project card for L'Oreal chatbot */
+.project-card-beauty {
+  /* Pink/purple beauty theme with elegant glow */
+  box-shadow: 0 4px 24px #ff69b4aa, 0 4px 16px #4ef0fc22;
+  border: 2.5px solid #ff69b4;
+  background: linear-gradient(120deg, #2d1b2e 60%, #3d1a3d 100%);
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+/* Beauty card hover effect with elegant shimmer */
+.project-card-beauty:hover {
+  box-shadow: 0 8px 40px #ff69b4cc, 0 8px 32px #ff1493aa;
+  border-color: #ff1493;
+  /* Gentle scale effect for elegance */
+  transform: scale(1.02);
+}
+
+/* Tech-themed project card for Game Library */
+.project-card-tech {
+  /* Green/cyan tech theme with digital glow */
+  box-shadow: 0 4px 24px #00ff7faa, 0 4px 16px #4ef0fc22;
+  border: 2.5px solid #00ff7f;
+  background: linear-gradient(120deg, #0f2027 60%, #203a43 100%);
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+/* Tech card hover effect with digital pulse */
+.project-card-tech:hover {
+  box-shadow: 0 8px 40px #00ff7fcc, 0 8px 32px #00ffaaaa;
+  border-color: #00ffaa;
+  /* Quick pulse animation for tech feel */
+  animation: pulse 0.3s ease-in-out 1;
+}
+
+/* Pulse animation for tech theme */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+/* Projects container: 2 columns, 3 rows grid for desktop screens */
+.projects-container {
+  /* Use flexbox to create a grid */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px; /* Space between cards */
+  max-width: 740px; /* Limit width so grid looks neat */
+  margin: 0 auto;
+}
+
+/* Each project card takes up about half the container width */
+.projects-container .project-card {
+  flex: 0 1 320px; /* Each card is about 320px wide */
+  margin: 0; /* Remove extra margin, gap handles spacing */
 }
 
 /* Responsive styles for small screens */
 @media (max-width: 600px) {
+
   /* Make sure the body allows scrolling and fits small screens */
   body {
     padding: 0;
@@ -401,7 +541,7 @@ footer.simple-footer a:hover {
   }
 
   /* Make section content fill the screen and add spacing */
-  section > * {
+  section>* {
     max-width: 98vw;
     padding-left: 14px;
     padding-right: 14px;
@@ -412,6 +552,7 @@ footer.simple-footer a:hover {
     font-size: 2em;
     margin-bottom: 12px;
   }
+
   h2 {
     font-size: 1.3em;
     margin-bottom: 10px;
@@ -419,7 +560,8 @@ footer.simple-footer a:hover {
   }
 
   /* Add more space below paragraphs */
-  p, .coming-soon {
+  p,
+  .coming-soon {
     font-size: 1.08em;
     margin-bottom: 14px;
     margin-top: 8px;
@@ -432,11 +574,13 @@ footer.simple-footer a:hover {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 0; /* remove gap so columns align */
+    gap: 0;
+    /* remove gap so columns align */
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 10px;
   }
+
   /* Each skill takes up 50% width (2 columns) */
   .skill-icon {
     width: 50%;
@@ -454,6 +598,7 @@ footer.simple-footer a:hover {
     color: #4ef0fc;
     text-shadow: 0 0 8px #4ef0fc55;
   }
+
   .skill-icon div {
     font-size: 1.08em;
     color: #b3e6ff;
@@ -472,11 +617,14 @@ footer.simple-footer a:hover {
 
   /* Navbar: show exactly 2 lines for small screens */
   .navbar ul {
-    flex-wrap: wrap; /* allow items to wrap */
+    flex-wrap: wrap;
+    /* allow items to wrap */
     height: auto;
     padding: 0;
-    justify-content: flex-start; /* align items to the left */
+    justify-content: flex-start;
+    /* align items to the left */
   }
+
   .navbar li {
     /* Remove default margin for better alignment */
     margin: 0;
@@ -486,6 +634,7 @@ footer.simple-footer a:hover {
     flex: none;
     width: auto;
   }
+
   /* First row: Home, About, Skills (each 1/3 width) */
   .navbar li:nth-child(1),
   .navbar li:nth-child(2),
@@ -495,6 +644,7 @@ footer.simple-footer a:hover {
     border-bottom: 1px solid #4ef0fc44;
     box-sizing: border-box;
   }
+
   /* Second row: Projects, Contact (each 1/2 width) */
   .navbar li:nth-child(4),
   .navbar li:nth-child(5) {
@@ -502,6 +652,7 @@ footer.simple-footer a:hover {
     /* No border on bottom for last row */
     box-sizing: border-box;
   }
+
   /* Add a little vertical space between rows */
   .navbar li:nth-child(4) {
     /* Start second row */
@@ -517,6 +668,7 @@ footer.simple-footer a:hover {
     /* Add a subtle border between columns */
     border-right: 1px solid #4ef0fc22;
   }
+
   /* Remove right border for last item in each row */
   .navbar li:nth-child(3) a,
   .navbar li:nth-child(5) a {
@@ -531,13 +683,15 @@ footer.simple-footer a:hover {
 
   /* Section: make sure it never overflows the screen */
   section {
-    width: 100vw; /* always full viewport width */
+    width: 100vw;
+    /* always full viewport width */
     margin-left: 0;
     margin-right: 0;
     padding-left: 0;
     padding-right: 0;
   }
-  section > * {
+
+  section>* {
     max-width: 100vw;
     padding-left: 10px;
     padding-right: 10px;
@@ -550,12 +704,15 @@ footer.simple-footer a:hover {
     padding-bottom: 18px;
     text-align: center;
   }
+
   .hero h1 {
     font-size: 1.5em;
     margin-bottom: 10px;
     margin-top: 8px;
-    word-break: break-word; /* break long names if needed */
+    word-break: break-word;
+    /* break long names if needed */
   }
+
   .hero p {
     font-size: 1.08em;
     margin-top: 8px;
@@ -569,11 +726,13 @@ footer.simple-footer a:hover {
     padding-top: 14px;
     padding-bottom: 14px;
   }
+
   .bio h2 {
     margin-top: 0;
     margin-bottom: 8px;
     font-size: 1.15em;
   }
+
   .bio p {
     font-size: 1.05em;
     margin-top: 6px;
@@ -588,11 +747,13 @@ footer.simple-footer a:hover {
     padding-bottom: 14px;
     text-align: center;
   }
+
   .projects h2 {
     margin-top: 0;
     margin-bottom: 8px;
     font-size: 1.15em;
   }
+
   .coming-soon {
     font-size: 1em;
     margin-top: 10px;
@@ -607,6 +768,7 @@ footer.simple-footer a:hover {
     font-size: 1em;
     word-break: break-word;
   }
+
   footer.simple-footer a {
     display: inline-block;
     word-break: break-all;
@@ -615,13 +777,79 @@ footer.simple-footer a:hover {
   }
 
   /* Section content: add more vertical space and prevent clumping */
-  section > * {
+  section>* {
     margin-top: 8px;
     margin-bottom: 8px;
   }
 
   /* When jumping to a section, leave space for the navbar at the top */
   section {
-    scroll-margin-top: 88px; /* Adjust this value to match your navbar height */
+    scroll-margin-top: 88px;
+    /* Adjust this value to match your navbar height */
   }
+
+  /* Projects container: horizontal scrollable row for mobile */
+  .projects-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* Don't wrap, show in a single row */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    gap: 18px; /* Space between cards */
+    max-width: 100vw;
+    padding-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    scrollbar-width: thin; /* Show a thin scrollbar */
+    scroll-snap-type: x mandatory; /* Snap to each card when scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling for swipe */
+    justify-content: flex-start;
+  }
+
+  /* Each project card is sized for mobile and scrolls horizontally */
+  .projects-container .project-card {
+    /* Make each card fill the screen and be centered when swiped to */
+    width: 90vw; /* Each card takes up 90% of the viewport width */
+    min-width: 320px; /* Minimum width for smaller screens */
+
+    flex: 0 0 90vw; /* Prevent shrinking, always 90vw wide */
+    margin: 0;
+    scroll-snap-align: center; /* Center each card when swiped to */
+  }
+
+  /* Optional: Hide default scrollbar for a cleaner look */
+  .projects-container::-webkit-scrollbar {
+    height: 6px;
+    background: #232046;
+  }
+  .projects-container::-webkit-scrollbar-thumb {
+    background: #4ef0fc44;
+    border-radius: 3px;
+  }
+}
+
+/* Make project titles and descriptions white for all projects except the horror game */
+/* NASA Space Photo Gallery */
+.project-card-space h3,
+.project-card-space .project-description {
+  color: #fff;
+}
+
+/* Hydro Hero Water Charity Game */
+.project-card-water h3,
+.project-card-water .project-description {
+  color: #fff;
+}
+
+/* L'Oreal Routine Builder Chatbot */
+.project-card-beauty h3,
+.project-card-beauty .project-description {
+  color: #fff;
+}
+
+/* Full-stack Game Library */
+.project-card-tech h3,
+.project-card-tech .project-description {
+  color: #fff;
 }

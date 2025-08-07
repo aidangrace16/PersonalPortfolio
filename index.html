@@ -27,7 +27,7 @@
     <!-- Circular icon for your picture -->
     <div class="profile-icon">
       <!-- Use your profile picture here -->
-      <img src="img/avatarPlaceholder.jpg" alt="Profile picture">
+      <img src="img/me1.JPG" alt="Profile picture">
     </div>
     <h1>Aidan Grace</h1>
     <p>Hello! This is where you can learn more about me!</p>
@@ -85,24 +85,81 @@
   <!-- Projects Section: Placeholder for future projects -->
   <section class="projects" id="projects">
     <h2>Projects</h2>
-    <!-- Project card for the horror game with more emotion and spacing -->
-    <div class="project-card project-card-emotional">
-      <!-- Make the whole card clickable by wrapping content in <a> -->
-      <a href="https://mrsauce17.itch.io/something-wong" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-        <!-- Project image fills the card width -->
-        <img src="img/HorrorGamePicture.png" alt="Horror Game Screenshot" class="project-image">
-        <!-- Project title with an emotional emoji -->
-        <h3>Short Horror Game</h3>
-        <!-- Description with better formatting, padding, and emojis -->
-        <p class="project-description">
-          <span style="font-size:1.2em;">👻</span>
-          A short atmospheric horror game built in Unity, with custom C# scripting.<br>
-          <span style="font-size:1.1em;">🕯️</span> Trigger multiple endings based on your choices.<br><br>
-          <span style="font-size:1.1em;">🔑</span> <strong>Password to access:</strong> <code>1234</code>
-        </p>
+    
+    <!-- Container for all project cards - enables grid on desktop, scroll on mobile -->
+    <div class="projects-container">
+      <!-- Each project card is a single item in the grid or row -->
+      <!-- Project card for the horror game with more emotion and spacing -->
+      <div class="project-card project-card-emotional">
+        <!-- Make the whole card clickable by wrapping content in <a> -->
+        <a href="https://mrsauce17.itch.io/something-wong" target="_blank" style="text-decoration: none; color: inherit; display: block;">
+          <!-- Project image fills the card width -->
+          <img src="img/HorrorGamePicture.png" alt="Horror Game Screenshot" class="project-image">
+          <!-- Project title with an emotional emoji -->
+          <h3>Short Horror Game</h3>
+          <!-- Description with better formatting, padding, and emojis -->
+          <p class="project-description">
+            <span style="font-size:1.2em;">👻</span>
+            A short atmospheric horror game built in Unity, with custom C# scripting.<br>
+            <span style="font-size:1.1em;">🕯️</span> Trigger multiple endings based on your choices.<br><br>
+          </p>
 
-      </a>
+        </a>
+      </div>
+      
+      <!-- NASA Space Photo Gallery Project -->
+      <div class="project-card project-card-space">
+        <a href="https://aidangrace16.github.io/07-nasa-space-explorer/" target="_blank" style="text-decoration: none; color: inherit; display: block;">
+          <img src="img/NASA.png" alt="NASA Space Photo Gallery Screenshot" class="project-image">
+          <h3>NASA Space Photo of the Day Gallery</h3>
+          <p class="project-description">
+            <span style="font-size:1.2em;">🚀</span>
+            A stunning gallery showcasing NASA's daily space photography using their API.<br>
+            <span style="font-size:1.1em;">🌌</span> Browse through breathtaking images of our universe with detailed descriptions.<br><br>
+          </p>
+        </a>
+      </div>
+
+      <!-- Hydro Hero Water Charity Game Project -->
+      <div class="project-card project-card-water">
+        <a href="https://aidangrace16.github.io/05-cw-game-water-drop/" target="_blank" style="text-decoration: none; color: inherit; display: block;">
+          <img src="img/HydroHero.png" alt="Hydro Hero Game Screenshot" class="project-image">
+          <h3>Hydro Hero: Charity Water Web Game</h3>
+          <p class="project-description">
+            <span style="font-size:1.2em;">💧</span>
+            An interactive web game promoting water conservation awareness.<br>
+            <span style="font-size:1.1em;">🌍</span> Play mini-games while learning about global water challenges.<br><br>
+          </p>
+        </a>
+      </div>
+
+      <!-- L'Oreal Routine Builder Chatbot Project -->
+      <div class="project-card project-card-beauty">
+        <a href="https://aidangrace16.github.io/09-prj-loreal-routine-builder/" target="_blank" style="text-decoration: none; color: inherit; display: block;">
+          <img src="img/Loreal.png" alt="L'Oreal Routine Builder Screenshot" class="project-image">
+          <h3>L'Oreal Routine Builder Chatbot</h3>
+          <p class="project-description">
+            <span style="font-size:1.2em;">💄</span>
+            An AI-powered chatbot that creates personalized skincare routines.<br>
+            <span style="font-size:1.1em;">✨</span> Smart recommendations based on skin type and concerns.<br><br>
+          </p>
+        </a>
+      </div>
+
+      <!-- Full-stack Game Library Project -->
+      <div class="project-card project-card-tech">
+        <a href="#" style="text-decoration: none; color: inherit; display: block;">
+          <img src="img/hot2.JPG" alt="Game Library Application Screenshot" class="project-image">
+          <h3>Full-stack Game Library</h3>
+          <p class="project-description">
+            <span style="font-size:1.2em;">🎮</span>
+            A complete game collection manager with user authentication and database.<br>
+            <span style="font-size:1.1em;">🔧</span> Built with modern backend technologies to showcase full-stack skills.<br><br>
+          </p>
+        </a>
+      </div>
     </div>
+
     <!-- Add a class for spacing -->
     <div class="more-projects-soon">
       <p class="coming-soon">🚧 More projects coming soon. Stay tuned for updates!</p>
