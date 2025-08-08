@@ -799,8 +799,8 @@ footer.simple-footer a:hover {
     padding-bottom: 10px;
     margin-left: 0;
     margin-right: 0;
-    padding-left: 10vw;  /* Reduced side padding */
-    padding-right: 10vw;
+    padding-left: 40vw;  /* Reduced side padding */
+    padding-right: 40vw;
     scrollbar-width: thin; /* Show a thin scrollbar */
     scroll-snap-type: x mandatory; /* Snap to each card when scrolling */
     scroll-behavior: smooth; /* Smooth scrolling for swipe */
@@ -826,42 +826,35 @@ footer.simple-footer a:hover {
     border-radius: 3px;
   }
 
-  /* Turn off project card animations on mobile screens */
+  /* Turn off project card touch/hover animations on mobile screens */
   .project-card-emotional:hover,
+  .project-card-emotional:active,
   .project-card-water:hover,
+  .project-card-water:active,
   .project-card-beauty:hover,
+  .project-card-beauty:active,
   .project-card-tech:hover,
-  .project-card-space:hover {
-    /* Remove animation and transform effects for mobile */
+  .project-card-tech:active,
+  .project-card-space:hover,
+  .project-card-space:active {
+    /* Remove all animations except scale */
     animation: none !important;
-    transform: none !important;
-    box-shadow: 0 4px 24px #4ef0fc22;
-    border-color: inherit;
+    box-shadow: inherit !important;
+    border-color: inherit !important;
+    /* Ensure no unwanted transforms interfere with scale */
+    transform: scale(0.8) !important;
   }
 
-  /* Projects container: horizontal scrollable row for mobile */
-  .projects-container {
-    /* Add GPU acceleration for smoother scrolling */
-    -webkit-overflow-scrolling: touch;
-    perspective: 1000px;
-    perspective-origin: center;
-  }
-
-  /* Each project card is sized for mobile and scrolls horizontally */
-  .projects-container .project-card {
-    /* Add smooth transitions for scaling */
-    transition: transform 0.3s ease-out;
-    /* Start all cards at smaller scale */
-    transform: scale(0.8);
-    /* Improve performance with GPU acceleration */
-    will-change: transform;
-    transform-origin: center center;
-  }
-
-  /* Active card styles */
+  /* Keep only scale animation for active cards */
   .projects-container .project-card.active {
-    transform: scale(1);
-    z-index: 2;
+    transform: scale(1) !important;
+  }
+
+  /* Ensure smooth scale transitions */
+  .projects-container .project-card {
+    transition: transform 0.3s ease-out;
+    transform: scale(0.8);
+    will-change: transform;
   }
 }
 
