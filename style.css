@@ -503,20 +503,20 @@ footer.simple-footer a:hover {
   100% { transform: scale(1); }
 }
 
-/* Projects container: 2 columns, 3 rows grid for desktop screens */
+/* Projects container: 3 columns grid for desktop screens */
 .projects-container {
   /* Use flexbox to create a grid */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 32px; /* Space between cards */
-  max-width: 740px; /* Limit width so grid looks neat */
+  gap: 24px; /* Slightly reduced gap for 3 columns */
+  max-width: 1080px; /* Increased to accommodate 3 columns */
   margin: 0 auto;
 }
 
-/* Each project card takes up about half the container width */
+/* Each project card takes up about one-third of the container width */
 .projects-container .project-card {
-  flex: 0 1 320px; /* Each card is about 320px wide */
+  flex: 0 1 310px; /* Slightly narrower cards to fit 3 columns */
   margin: 0; /* Remove extra margin, gap handles spacing */
 }
 
@@ -794,13 +794,13 @@ footer.simple-footer a:hover {
     flex-direction: row;
     flex-wrap: nowrap; /* Don't wrap, show in a single row */
     overflow-x: auto; /* Allow horizontal scrolling */
-    gap: 18px; /* Space between cards */
+    gap: 0px; /* Space between cards */
     max-width: 100vw;
     padding-bottom: 10px;
     margin-left: 0;
     margin-right: 0;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 10vw;  /* Reduced side padding */
+    padding-right: 10vw;
     scrollbar-width: thin; /* Show a thin scrollbar */
     scroll-snap-type: x mandatory; /* Snap to each card when scrolling */
     scroll-behavior: smooth; /* Smooth scrolling for swipe */
@@ -810,11 +810,9 @@ footer.simple-footer a:hover {
   /* Each project card is sized for mobile and scrolls horizontally */
   .projects-container .project-card {
     /* Make each card fill the screen and be centered when swiped to */
-    width: 90vw; /* Each card takes up 90% of the viewport width */
-    min-width: 320px; /* Minimum width for smaller screens */
-
-    flex: 0 0 90vw; /* Prevent shrinking, always 90vw wide */
-    margin: 0;
+    width: 85vw;  /* Slightly wider cards */
+    margin: 0;    /* Remove margins between cards */
+    flex: 0 0 85vw; /* Keep card size fixed at 85vw */
     scroll-snap-align: center; /* Center each card when swiped to */
   }
 
@@ -839,6 +837,31 @@ footer.simple-footer a:hover {
     transform: none !important;
     box-shadow: 0 4px 24px #4ef0fc22;
     border-color: inherit;
+  }
+
+  /* Projects container: horizontal scrollable row for mobile */
+  .projects-container {
+    /* Add GPU acceleration for smoother scrolling */
+    -webkit-overflow-scrolling: touch;
+    perspective: 1000px;
+    perspective-origin: center;
+  }
+
+  /* Each project card is sized for mobile and scrolls horizontally */
+  .projects-container .project-card {
+    /* Add smooth transitions for scaling */
+    transition: transform 0.3s ease-out;
+    /* Start all cards at smaller scale */
+    transform: scale(0.8);
+    /* Improve performance with GPU acceleration */
+    will-change: transform;
+    transform-origin: center center;
+  }
+
+  /* Active card styles */
+  .projects-container .project-card.active {
+    transform: scale(1);
+    z-index: 2;
   }
 }
 
