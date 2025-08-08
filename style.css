@@ -856,6 +856,32 @@ footer.simple-footer a:hover {
     transform: scale(0.8);
     will-change: transform;
   }
+
+  .project-card { border: 2px solid var(--card-border, #4ef0fc); }
+
+  /* Theme variants just set the variable */
+  .project-card-water      { --card-border: #20b2aa; }
+  .project-card-space      { --card-border: #4169e1; }
+  .project-card-beauty     { --card-border: #ff69b4; }
+  .project-card-tech       { --card-border: #00ff7f; }
+  .project-card-emotional  { --card-border: #ff3b3b; }
+
+  /* All breakpoints or inside your mobile @media */
+  .projects-container .project-card:focus,
+  .projects-container .project-card:focus-visible,
+  .projects-container .project-card:active,
+  .projects-container .project-card:hover {
+    border-color: var(--card-border) !important;
+    outline: none;
+  }
+
+  /* If the inner link gets focus */
+  .projects-container .project-card a:focus,
+  .projects-container .project-card a:focus-visible {
+    outline: none;
+  }
+
+  .projects-container .project-card { -webkit-tap-highlight-color: transparent; }
 }
 
 /* Make project titles and descriptions white for all projects except the horror game */
