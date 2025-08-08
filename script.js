@@ -1,28 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
     const projectsContainer = document.querySelector('.projects-container');
     const cards = document.querySelectorAll('.project-card');
-
-    // Create intersection observer to detect centered cards
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Remove active class from all cards
-                cards.forEach(card => card.classList.remove('active'));
-                // Add active class to centered card
-                entry.target.classList.add('active');
+    
+    function updateActiveCard() {
+        const containerRect = projectsContainer.getBoundingClientRect();
+        const containerCenter = containerRect.left + (containerRect.width / 2);
+        
+        let closestCard = null;
+        let closestDistance = Infinity;
+        
+        cards.forEach(card => {
+            const cardRect = card.getBoundingClientRect();
+            const cardCenter = cardRect.left + (cardRect.width / 2);
+            const distance = Math.abs(containerCenter - cardCenter);
+            
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestCard = card;
             }
         });
-    }, {
-        root: projectsContainer,
-        threshold: 0.8, // Card needs to be 80% visible
-        rootMargin: '-10% 0px -10% 0px' // Creates a narrower detection zone in the center
+        
+        // Remove active class from all cards
+        cards.forEach(card => card.classList.remove('active'));
+        // Add active class to closest card
+        if (closestCard) {
+            closestCard.classList.add('active');
+        }
+    }
+
+    // Update on scroll
+    projectsContainer.addEventListener('scroll', () => {
+        requestAnimationFrame(updateActiveCard);
     });
 
-    // Observe all cards
-    cards.forEach(card => observer.observe(card));
+    // Update on touch events for smoother mobile experience
+    projectsContainer.addEventListener('touchmove', () => {
+        requestAnimationFrame(updateActiveCard);
+    });
 
-    // Optional: Add initial active class to first card
-    if (cards.length) {
-        cards[0].classList.add('active');
-    }
+    // Initial state
+    requestAnimationFrame(updateActiveCard);
 });
