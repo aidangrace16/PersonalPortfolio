@@ -15,12 +15,74 @@ body {
   background-repeat: no-repeat;
 }
 
+/* Reusable full-screen section class */
+.section-full {
+  height: 100vh;
+  height: 100svh;
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+}
+
+/* Inner container for full-screen sections with responsive scaling */
+.section-inner {
+  width: min(100%, 68rem);
+  padding: clamp(16px, 3vmin, 64px);
+  margin-inline: auto;
+  display: grid;
+  gap: clamp(12px, 2vmin, 32px);
+  text-wrap: balance;
+}
+
+/* Responsive typography for full-screen sections */
+.section-inner h1 { 
+  font-size: clamp(28px, 4vmin + 8px, 64px); 
+  line-height: 1.1; 
+}
+
+.section-inner h2 { 
+  font-size: clamp(22px, 3vmin + 6px, 40px); 
+  line-height: 1.2; 
+}
+
+.section-inner p { 
+  font-size: clamp(16px, 1.6vmin + 6px, 20px); 
+  line-height: 1.6; 
+}
+
+/* Responsive images and media in full-screen sections */
+.section-inner img, 
+.section-inner video { 
+  max-width: 100%; 
+  height: auto; 
+  object-fit: contain; 
+}
+
+/* Responsive action buttons */
+.section-inner .actions { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: clamp(8px, 1.5vmin, 16px); 
+}
+
+.section-inner .btn { 
+  padding: clamp(8px, 1.5vmin, 14px) clamp(14px, 2.5vmin, 22px); 
+  font-size: clamp(14px, 1.6vmin, 18px); 
+}
+
+/* Small-height safeguard to prevent content clipping */
+@media (max-height: 640px) {
+  .section-full { 
+    overflow-y: auto; 
+  }
+}
+
 /* Make all sections stand out with a semi-transparent dark background */
 section {
   width: 100%;
   max-width: none;
-  margin: 30px 0;
-  padding: 24px 0;
+  margin: 80px 0; /* Increased spacing between sections */
+  padding: 40px 0; /* Increased padding inside sections */
   /* Slightly lighter purple with transparency */
   background: linear-gradient(120deg, rgba(60, 30, 90, 0.85), rgba(40, 30, 70, 0.85));
   border-radius: 18px;
@@ -29,6 +91,16 @@ section {
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(80, 60, 150, 0.25);
   transition: box-shadow 0.2s;
+  /* Animation properties for scroll animations */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out, box-shadow 0.2s;
+}
+
+/* Animation class that gets added when section is in view */
+section.animate-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* When jumping to a section, leave space for the navbar at the top */
@@ -55,6 +127,16 @@ section>* {
 .hero {
   text-align: center;
   background: linear-gradient(120deg, rgba(60, 30, 90, 0.85), rgba(40, 30, 70, 0.85));
+  margin: 0; /* Remove margins for full-screen */
+  /* Hero should start visible since it's the first thing users see */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* About section with full-screen treatment */
+.bio {
+  text-align: center;
+  margin: 0; /* Remove margins for full-screen */
 }
 
 /* Headings: neon blue/cyan for a techy look */
@@ -145,16 +227,22 @@ h2 {
 }
 
 /* Profile icon styles with a playful border */
+/* Profile icon styles with a playful border */
+/* Make the size relative to the screen width for responsiveness */
 .profile-icon {
-  width: 110px;
-  height: 110px;
+  width: 45vw;           /* 32% of the viewport width */
+  max-width: 210px;      /* Don't get bigger than 210px */
+  min-width: 120px;      /* Don't get smaller than 120px */
+  height: 45vw;          /* Keep height equal to width */
+  max-height: 210px;
+  min-height: 120px;
   background: linear-gradient(135deg, #232046 60%, #4ef0fc 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 22px auto;
-  font-size: 48px;
+  font-size: 6vw;        /* Make icon size scale with screen */
   box-shadow: 0 4px 16px #4ef0fc33;
   overflow: hidden;
   padding: 0;
@@ -534,10 +622,15 @@ footer.simple-footer a:hover {
 
   /* Give more space between sections for clarity */
   section {
-    padding: 18px 0;
-
+    padding: 24px 0; /* Increased mobile padding */
+    margin: 60px 0; /* Increased mobile spacing */
     border-radius: 14px;
     background: linear-gradient(120deg, rgba(60, 30, 90, 0.92), rgba(40, 30, 70, 0.92));
+  }
+
+  /* Hero gets less top margin on mobile to save space */
+  .hero {
+    margin-top: 20px;
   }
 
   /* Make section content fill the screen and add spacing */
@@ -602,17 +695,6 @@ footer.simple-footer a:hover {
   .skill-icon div {
     font-size: 1.08em;
     color: #b3e6ff;
-  }
-
-  /* Make profile icon smaller but keep it centered */
-  .profile-icon {
-    width: 70px;
-    height: 70px;
-    font-size: 28px;
-    margin-bottom: 12px;
-    background: linear-gradient(135deg, #232046 60%, #4ef0fc 100%);
-    border: 3px solid #4ef0fc;
-    box-shadow: 0 4px 16px #4ef0fc33;
   }
 
   /* Navbar: show exactly 2 lines for small screens */
@@ -907,4 +989,59 @@ footer.simple-footer a:hover {
 .project-card-tech h3,
 .project-card-tech .project-description {
   color: #fff;
+}
+
+/* Typing animation styles for hero paragraph */
+.hero-typing {
+  /* Reserve space to prevent layout jump during typing */
+  min-height: 1.6em; /* Adjust based on your paragraph line-height */
+  position: relative;
+}
+
+/* Typing cursor that blinks during animation */
+.hero-typing::after {
+  content: '|';
+  color: #4ef0fc;
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+/* Stop cursor blinking when typing is complete */
+.hero-typing.typing-complete::after {
+  animation: none;
+  opacity: 0;
+}
+
+/* Blinking animation for the cursor */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* For users who prefer reduced motion - show full text immediately */
+@media (prefers-reduced-motion: reduce) {
+  .hero-typing {
+    /* Skip typing animation and show full text */
+    opacity: 1 !important;
+  }
+  
+  .hero-typing::after {
+    /* Hide cursor for reduced motion */
+    display: none;
+  }
+}
+
+/* Fade-in animation styles for About Me paragraphs */
+.bio-paragraph {
+  /* Start paragraphs as invisible */
+  opacity: 0;
+  /* Add smooth transition effect */
+  transition: opacity 0.8s ease-in-out;
+  /* Add space between paragraphs */
+  margin-bottom: 20px;
+}
+
+/* When paragraph should be visible */
+.bio-paragraph.fade-in {
+  opacity: 1;
 }
