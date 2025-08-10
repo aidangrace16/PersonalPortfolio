@@ -26,7 +26,7 @@ body {
 
 /* Inner container for full-screen sections with responsive scaling */
 .section-inner {
-  width: min(100%, 68rem);
+  width: min(100%, 75rem);
   padding: clamp(16px, 3vmin, 64px);
   margin-inline: auto;
   display: grid;
@@ -69,6 +69,7 @@ body {
   padding: clamp(8px, 1.5vmin, 14px) clamp(14px, 2.5vmin, 22px); 
   font-size: clamp(14px, 1.6vmin, 18px); 
 }
+
 
 /* Small-height safeguard to prevent content clipping */
 @media (max-height: 640px) {
@@ -1039,9 +1040,15 @@ footer.simple-footer a:hover {
   transition: opacity 0.8s ease-in-out;
   /* Add space between paragraphs */
   margin-bottom: 20px;
+  
 }
 
 /* When paragraph should be visible */
 .bio-paragraph.fade-in {
   opacity: 1;
+}
+
+.bio .section-inner {
+  max-width: 900px; /* Adjust this value as needed */
+  width: 90%; /* Uses 90% of available width up to max-width */
 }
