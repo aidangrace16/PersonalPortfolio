@@ -328,6 +328,11 @@ h2 {
   border-radius: 50%;
 }
 
+#hero.section-full.animate-in {
+  padding-top: 0px;
+  max-height: 90vh;
+}
+
 /* LinkedIn note styling */
 .linkedin-note {
   font-size: 0.9em;
@@ -736,6 +741,11 @@ footer.simple-footer a:hover {
   /* Hero gets less top margin on mobile to save space */
   .hero {
     margin-top: 20px;
+  }
+
+  #hero.section-full.animate-in {
+    padding-top: 0px;
+    max-height: 80vh;
   }
 
   /* Make section content fill the screen and add spacing */
@@ -1155,4 +1165,11 @@ footer.simple-footer a:hover {
 .bio .section-inner {
   max-width: 900px; /* Adjust this value as needed */
   width: 90%; /* Uses 90% of available width up to max-width */
+}
+
+@media (max-height: 800px) and (max-width: 400px) {
+  /* Change About me section <p> font size for small screens */
+  .bio p {
+    font-size: 0.95em; /* Adjust font size for smaller screens */
+  }
 }
